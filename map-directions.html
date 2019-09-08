@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Displaying Text Directions With setPanel()</title>
+    <link href="./assets/css/map.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="floating-panel">
+      <strong>Start:</strong>
+      <select id="start">
+        <option value="550 West 120th Street, New York, NY">Columbia</option>
+        <option value="11 Wall St, New York, NY">NYSE</option>
+      </select>
+      <br>
+      <strong>End:</strong>
+      <select id="end">
+        <option value="350 Fifth Avenue, New York, NY">Empire State Building</option>
+        <option value="806 Washington Avenue, Brooklyn, NY">My House</option>
+      </select>
+    </div>
+
+    <div id="floating-panel">
+            <b>Mode of Travel: </b>
+            <select id="mode">
+              <option value="DRIVING">Driving</option>
+              <option value="WALKING">Walking</option>
+              <option value="BICYCLING">Bicycling</option>
+              <option value="TRANSIT">Transit</option>
+            </select>
+            </div>˜
+    <div id="right-panel"></div>
+
+    <div id="map"></div>
+   
+    <script src="./assets/javascript/map2.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzlawAV3IOgicN7XjSCZHjg7EJrGheyso&callback=initMap">
+    </script>
+  </body>
+</html>

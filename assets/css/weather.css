@@ -4,9 +4,11 @@ body {
 
 .weather-container {
 	text-align: center;
+	width: 200px;
+	height: 400px;
 }
 
-.weather {
+/* .weather {
 	font-size: 22px;
 	margin: 0;
 }
@@ -20,4 +22,4 @@ body {
 	font-size: 60px;
 	margin: 0;
 	font-weight: bold;
-}
+} */
