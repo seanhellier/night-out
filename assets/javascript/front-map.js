@@ -4,7 +4,7 @@ var mapQueryURL =
 	eventAddress +
 	'CA&key=AIzaSyAW51bpjHefnDpcpjD-uvALl0jhTwaBFG8';
 
-console.log(latlong);
+// console.log(latlong);
 $.ajax({
 	url: mapQueryURL,
 	method: 'GET'
