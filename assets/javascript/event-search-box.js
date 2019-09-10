@@ -117,32 +117,30 @@ $(document).on("click", ".show-details", function(){
   console.log(thisEventAddress);
   console.log(thisEventDate);
 
-  var weatherElement =$("<div>");
-  var mapElement = $("<div>").attr("id", "map-element");
-  $("#event-"+thisEventNumber).append(weatherElement);
+  var weatherElement =$("<div>").addClass("card text-center m-2").css("width", "230px");
+  // weatherElement.text("hello!");
+  var innerWeatherElement = $("<div>").addClass("card-body");
+  // var mapElement = $("<div>").attr("id", "map-element");
   // $(this).append(mapElement);
+  $("#event-"+thisEventNumber).append(weatherElement);
+  weatherElement.append(innerWeatherElement);
+  
 
   var mapQueryURL = 'https://maps.googleapis.com/maps/api/geocode/json?address=' +
 	thisEventAddress + 'CA&key=AIzaSyAW51bpjHefnDpcpjD-uvALl0jhTwaBFG8';
 
   $.ajax({
     url: mapQueryURL,
-    method: 'GET'
-  }).then(function(data) {
+    method: "GET"
+  }).then(function(data){
     console.log(data);
     var eventLatitude = data.results[0].geometry.location.lat;
     var eventLongitude = data.results[0].geometry.location.lng;
-    console.log(typeof eventLatitude);
-    console.log(typeof eventLongitude);
+    console.log(eventLatitude);
+    console.log(eventLongitude);
 
     initMap(eventLatitude, eventLongitude);
-  })
-  function initMap(eventLatitude, eventLongitude) {
-    var map = new google.maps.Map(document.getElementById('map-element'), {
-      center: { lat: eventLatitude, lng: eventLongitude },
-      zoom: 14
-    });
-  }
+  });
 
   var weatherQueryURL = "https://api.weatherbit.io/v2.0/forecast/daily?city=New+York,NY&key=5a5ea84d5dec48e7bb74f8da7dab4a96&units=I";
 
@@ -154,12 +152,26 @@ $(document).on("click", ".show-details", function(){
     for (var i=0; i < results.data.length; i++){
       if (results.data[i].datetime === thisEventDate) {
         var temp = results.data[i].temp;
+        var weatherDescription = results.data[i].weather.description;
+        var weatherIcon = "https://www.weatherbit.io/static/img/icons/" + results.data[i].weather.icon + ".png";
         console.log(temp);
-        $(weatherElement).text("The weather will be: " +temp);
+        var tempText = $("<p>").addClass("card-text").text("The temperature will be " + temp + " degrees Fahrenheit.");
+        var weatherDescriptionText = $("<p>").addClass("card-text").text(weatherDescription);
+        var weatherIconElement = $("<img>").attr("src", weatherIcon);
+        innerWeatherElement.append(tempText);
+        innerWeatherElement.append(weatherIconElement);
+        innerWeatherElement.append(weatherDescriptionText);
       }
     }
   })
 });
+
+function initMap(eventLatitude, eventLongitude) {
+  var map = new google.maps.Map(document.getElementById('map-element'), {
+    center: { lat: eventLatitude, lng: eventLongitude },
+    zoom: 14
+  });
+};
   
 
 // var city = 'New York';
