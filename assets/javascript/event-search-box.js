@@ -53,7 +53,7 @@ $("#search-events").on("click", function(event){
 
     // ajax request to ticketmaster 
     // variables for event ajax request 
-    var eventQueryURL = "https://app.ticketmaster.com/discovery/v2/events?apikey=AHGfgxBdK3vAe03qYCGGX5HfyeUHC6g3&locale=*&startDateTime="+convertedStartDate+"Z&endDateTime="+convertedEndDate+"Z&classificationName=music&dmaId=345&sort=date,asc&keyword="+searchEventKeyword;
+    var eventQueryURL = "https://app.ticketmaster.com/discovery/v2/events?apikey=AHGfgxBdK3vAe03qYCGGX5HfyeUHC6g3&locale=*&startDateTime="+convertedStartDate+"Z&endDateTime="+convertedEndDate+"Z&classificationName=music&city=New%20York&sort=date,asc&keyword="+searchEventKeyword;
     $.ajax({
         url: eventQueryURL,
         method: "GET"
@@ -126,21 +126,21 @@ $(document).on("click", ".show-details", function(){
   weatherElement.append(innerWeatherElement);
   
 
-  var mapQueryURL = 'https://maps.googleapis.com/maps/api/geocode/json?address=' +
-	thisEventAddress + 'CA&key=AIzaSyAW51bpjHefnDpcpjD-uvALl0jhTwaBFG8';
+  // var mapQueryURL = 'https://maps.googleapis.com/maps/api/geocode/json?address=' +
+	// thisEventAddress + 'CA&key=AIzaSyAW51bpjHefnDpcpjD-uvALl0jhTwaBFG8';
 
-  $.ajax({
-    url: mapQueryURL,
-    method: "GET"
-  }).then(function(data){
-    console.log(data);
-    var eventLatitude = data.results[0].geometry.location.lat;
-    var eventLongitude = data.results[0].geometry.location.lng;
-    console.log(eventLatitude);
-    console.log(eventLongitude);
+  // $.ajax({
+  //   url: mapQueryURL,
+  //   method: "GET"
+  // }).then(function(data){
+  //   console.log(data);
+  //   var eventLatitude = data.results[0].geometry.location.lat;
+  //   var eventLongitude = data.results[0].geometry.location.lng;
+  //   console.log(eventLatitude);
+  //   console.log(eventLongitude);
 
-    initMap(eventLatitude, eventLongitude);
-  });
+  //   initMap(eventLatitude, eventLongitude);
+  // });
 
   var weatherQueryURL = "https://api.weatherbit.io/v2.0/forecast/daily?city=New+York,NY&key=5a5ea84d5dec48e7bb74f8da7dab4a96&units=I";
 

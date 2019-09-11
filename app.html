@@ -18,6 +18,7 @@
     <!-- more jQuery -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/front-map.css"/>
 </head>
 
 <body>
@@ -66,17 +67,20 @@
             <div class="col-md-2"></div>
         </div>
         <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <div class="col-md-1"></div>
+            <div class="col-md-7">
                 <div class="mt-5" id="events-display"></div>
             </div>
-            <div class="col-md-2">
-                <div id="map-element"></div>
+            <div class="col-md-4">
+                <div id="map"></div>
             </div>
         </div>
     </div>
-    
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCawnsR30sCrk5W1lYTbARCEkJUMm1M2ZE&callback=initMap"></script>
+
+    <script src="./assets/javascript/front-map.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW51bpjHefnDpcpjD-uvALl0jhTwaBFG8&callback=initMap">
+    </script>
     <script src="assets/javascript/event-search-box.js"></script>
 </body>
 </html>
