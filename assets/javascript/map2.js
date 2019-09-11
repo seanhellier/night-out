@@ -1,3 +1,6 @@
+var start = '';
+var end = '';
+
 function initMap() {
 	var directionsRenderer = new google.maps.DirectionsRenderer();
 	var directionsService = new google.maps.DirectionsService();
@@ -12,16 +15,16 @@ function initMap() {
 	control.style.display = 'block';
 	map.controls[google.maps.ControlPosition.TOP_CENTER].push(control);
 
-	var onChangeHandler = function() {
+	$('#submit').on('click', function(e) {
+		e.preventDefault();
+		start = $('#start').val();
+		end = $('#end').val();
+
 		calculateAndDisplayRoute(directionsService, directionsRenderer);
-	};
-	document.getElementById('start').addEventListener('change', onChangeHandler);
-	document.getElementById('end').addEventListener('change', onChangeHandler);
+	});
 }
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-	var start = document.getElementById('start').value;
-	var end = document.getElementById('end').value;
 	directionsService.route(
 		{
 			origin: start,
