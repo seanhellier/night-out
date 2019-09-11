@@ -18,6 +18,9 @@
     <!-- more jQuery -->
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- map -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/front-map.css"/>
 </head>
 
 <body>
@@ -45,10 +48,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-2"></div>
+
             <!-- search box -->
             <div class="col-md-8">
                 <div class="p-3 mt-5 bg-secondary text-white">
                     <h2>Find events in NYC</h2>
+
+
                     <!-- form for searching for events -->
                     <form>
                         <div class="form-group">
@@ -64,11 +70,34 @@
             </div>
             <div class="col-md-2"></div>
         </div>
-        <div class="row">
-            <div class="mt-5" id="events-display"></div>
-        </div>
+
     </div>
+    <div id="events-element">
+            
+                    <div class="mt-5" id="events-display"></div>
+                
+    </div>
+        
+
+    
+            <div id="map">
+            
+                </div>
+    
+                
+
+
+                        
+
+        
+  
 
     <script src="assets/javascript/event-search-box.js"></script>
+
+    <!-- map -->
+    <script src="./assets/javascript/front-map.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW51bpjHefnDpcpjD-uvALl0jhTwaBFG8&callback=initMap">
+    </script>
 </body>
 </html>
