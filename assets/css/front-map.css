@@ -1,7 +1,11 @@
 #map {
 	height: 300px;
 	width: 300px;
-	display: none;
+}
+#map-card {
+	display:none;
+	position:sticky;
+	top: 0;
 }
 
 #from, #to{
@@ -14,9 +18,6 @@
 	opacity: 0.9;
 }
 
-#events-display {
-	width: 60%;
-}
 /* Optional: Makes the sample page fill the window. */
 /* html,
 body {

@@ -61,6 +61,7 @@ $("#search-events").on("click", function(event){
         console.log(response);
         $("#events-display").html("<h3>Your search returned " +response._embedded.events.length+ " results. </h3>");
         $("h3").addClass("border-bottom");
+        $("#map-card").show();
         for (var i=0; i < response._embedded.events.length; i++){
             var eventImageSrc = response._embedded.events[i].images[8].url;
             var eventName = response._embedded.events[i].name;
@@ -86,11 +87,11 @@ $("#search-events").on("click", function(event){
             newEventElement.append(eventAddressElement);
             var eventDateElement = $("<p>").text("Date: " + eventDate);
             newEventElement.append(eventDateElement);
-            var detailsBtn = $("<button>").text("Show Weather").addClass("mb-2 btn btn-primary show-weather");
-            detailsBtn.attr("data-address", eventAddress);
-            detailsBtn.attr("data-date", eventDate);
-            detailsBtn.attr("data-event", eventCounter);
-            newEventElement.append(detailsBtn);
+            var weatherBtn = $("<button>").text("Show Weather").addClass("mb-2 btn btn-primary show-weather");
+            // detailsBtn.attr("data-address", eventAddress);
+            weatherBtn.attr("data-date", eventDate);
+            weatherBtn.attr("data-event", eventCounter);
+            newEventElement.append(weatherBtn);
             newEventElement.addClass("border-bottom mt-2");
             $("#events-display").append(newEventElement);
             eventCounter++;
@@ -106,6 +107,7 @@ $("#clear-results").on("click", function (event){
   $("#search-keyword").val("");
   $("#to").val("");
   $("#from").val("");
+  $("map-card").hide();
 });
 
 // Attach click event to Show Details buttons 
