@@ -28,6 +28,6 @@ function initMap(eventLatitude, eventLongitude) {
 	var marker = new google.maps.Marker({
 		position: markerPosition,
 		map: map,
-		title: 'Empire State Building'
+		title: 'New York City'
 	});
 }

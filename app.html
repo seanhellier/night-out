@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Night Out</title>
+    
     <!-- link to Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/02cf999969.js"></script>
     <!-- link to MomentJS -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <!-- link to jQuery -->
@@ -24,7 +27,7 @@
 <body>
     <!-- navigation bar -->
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Night Out</a>
+        <a class="navbar-brand" href="app.html">Night Out</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,51 +39,46 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
         </ul>
     </nav>
     <!-- main content including the search box -->
     <div class="container">
         <div class="row">
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
             <!-- search box -->
-            <div class="col-md-8">
-                <div class="p-3 mt-5 bg-secondary text-white">
+            <div class="col-md-10">
+                <div class="p-3 mt-4 bg-secondary text-white" id="search-box">
                     <h2>How will you spend your <i>Night Out?</i></h2>
-                    <p>Search events in NYC</p>
                     <!-- form for searching for events -->
                     <form>
                         <div class="form-group">
-                            <input class="form-control form-control-lg mt-3 mb-3" type="text" id="search-keyword">
-                            <label for="from">From</label>
+                            <input class="form-control mt-3 mb-3" type="text" id="search-keyword" placeholder="Search Events">
+                            <label for="from"><i class="far fa-calendar-alt"></i> From: </label>
                             <input class="form-group" type="text" id="from" name="from">
-                            <label for="to">to</label>
+                            <label for="to"><i class="far fa-calendar-alt"></i> To: </label>
                             <input class="form-group" type="text" id="to" name="to">
-                            <button type="submit" class="btn btn-primary" id="search-events">Search</button>
-                            <button type="reset" class="btn btn-primary" id="clear-results">Clear Results</button>
+                            <br>
+                            <button type="submit" class="btn btn-primary" id="search-events"><i class="fas fa-search"></i> Search</button>
+                            <button type="reset" class="btn btn-primary" id="clear-results"><i class="fas fa-trash-alt"></i> Clear Results</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="col-md-2"></div>
-        </div>
-        <div class="row">
             <div class="col-md-1"></div>
-            <div class="col-md-7">
-                <div class="mt-5" id="events-display"></div>
-            </div>
-            <div class="col-md-4">
-                <div id="map"></div>
-            </div>
         </div>
     </div>
 
-    <script src="./assets/javascript/front-map.js"></script>
+    
+    <div class="mt-5 ml-3" id="events-display"></div>
+    <div id="map"></div>
+        
+   
+
+    
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW51bpjHefnDpcpjD-uvALl0jhTwaBFG8&callback=initMap">
     </script>
+    <script src="assets/javascript/front-map.js"></script>
     <script src="assets/javascript/event-search-box.js"></script>
 </body>
-</html
+</html>

@@ -1,8 +1,24 @@
 #map {
-	height: 50%;
+	height: 300px;
+	width: 300px;
+	display: none;
+}
+
+#from, #to{
+	border-radius: 4px;
+}
+
+#search-box {
+	border-radius: 10px;
+	background-color: lightgray;
+	opacity: 0.9;
+}
+
+#events-display {
+	width: 60%;
 }
 /* Optional: Makes the sample page fill the window. */
-html,
+/* html,
 body {
 	height: 100%;
 	margin: 0;
@@ -66,4 +82,4 @@ body {
 		float: none;
 		width: auto;
 	}
-}
+} */
