@@ -53,7 +53,7 @@ $("#search-events").on("click", function(event){
 
     // ajax request to ticketmaster 
     // variables for event ajax request 
-    var eventQueryURL = "https://app.ticketmaster.com/discovery/v2/events?apikey=AHGfgxBdK3vAe03qYCGGX5HfyeUHC6g3&locale=*&startDateTime="+convertedStartDate+"Z&endDateTime="+convertedEndDate+"Z&classificationName=music&city=New%20York&sort=date,asc&keyword="+searchEventKeyword;
+    var eventQueryURL = "https://app.ticketmaster.com/discovery/v2/events?apikey=AHGfgxBdK3vAe03qYCGGX5HfyeUHC6g3&locale=*&startDateTime="+convertedStartDate+"Z&endDateTime="+convertedEndDate+"Z&city=New%20York&sort=date,asc&keyword="+searchEventKeyword;
     $.ajax({
         url: eventQueryURL,
         method: "GET"
