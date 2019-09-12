@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+
+    <title>Displaying Text Directions With setPanel()</title>
+
+
+    <link href="./assets/css/map.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="floating-panel">
+
+        <b>Mode of Travel: </b>
+        <select id="mode">
+          <option value="DRIVING">Driving</option>
+          <option value="WALKING">Walking</option>
+          <option value="BICYCLING">Bicycling</option>
+          <option value="TRANSIT">Transit</option>
+        </select>
+
+        <form >
+          beginning: <input type="text" id="start"  name="start"><br>
+          Destination <input type="text"  id="end" name="end"><br>
+          <input type="submit" value="Submit" id="submit">
+        </form>
+    </div>
+
+    <div id="right-panel"></div>
+
+    <div id="map"></div>
+   
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./assets/javascript/map2.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzlawAV3IOgicN7XjSCZHjg7EJrGheyso&callback=initMap">
+    </script>
+  </body>
+</html>

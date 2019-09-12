@@ -1,10 +1,10 @@
-var eventAddress = '350 Fifth Avenue, New York, NY';
+var eventAddress = '350 Fifth Avenue New York, NY';
 var mapQueryURL =
 	'https://maps.googleapis.com/maps/api/geocode/json?address=' +
 	eventAddress +
-	'CA&key=AIzaSyAW51bpjHefnDpcpjD-uvALl0jhTwaBFG8';
+	'CA&key=AIzaSyCawnsR30sCrk5W1lYTbAERCEkJUMm1M2Z';
 
-// console.log(latlong);
+// // console.log(latlong);
 $.ajax({
 	url: mapQueryURL,
 	method: 'GET'
@@ -21,13 +21,6 @@ $.ajax({
 function initMap(eventLatitude, eventLongitude) {
 	var map = new google.maps.Map(document.getElementById('map'), {
 		center: { lat: eventLatitude, lng: eventLongitude },
-		zoom: 12
-	});
-
-	var markerPosition = { lat: eventLatitude, lng: eventLongitude };
-	var marker = new google.maps.Marker({
-		position: markerPosition,
-		map: map,
-		title: 'New York City'
+		zoom: 14
 	});
 }

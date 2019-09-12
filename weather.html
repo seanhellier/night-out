@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+		   <!-- Bootstrap and jquery -->
+		   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+		</script>
+
+		<!-- local css -->
+		<link href="./assets/css/weather.css" rel="stylesheet"/>
+		<link href="./assets/css/map.css" rel="stylesheet"/>
+	</head>
+	<body>
+			<div class="container">
+					<div class="row">
+							<div class="col">
+									<div class="weather">
+											<div class="weather-container">
+											</div>
+							</div>
+							<div class="col-md-auto">
+								<div id="map"></div>
+							</div>
+						  </div>
+						</div>
+
+
+			  <!-- <script>
+					function initMap() {
+					  var map = new google.maps.Map(document.getElementById('map'), {
+						center: {lat: -34.397, lng: 150.644},
+						zoom: 8
+					  });
+					}
+			</script> -->
+
+<!-- <div class="weather">
+		<div class="weather-container">
+		</div> -->
+
+			<script src="./assets/javascript/weather.js"></script>
+			<script src="./assets/javascript/map.js"></script>
+			<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCawnsR30sCrk5W1lYTbARCEkJUMm1M2ZE&callback=initMap">
+			</script>
+	</body>
+</html>
