@@ -14,10 +14,12 @@
 
 #search-box {
 	border-radius: 10px;
-	background-color: lightgray;
 	opacity: 0.9;
 }
 
+#search-container {
+	max-width: 600px;
+}
 /* Optional: Makes the sample page fill the window. */
 /* html,
 body {
